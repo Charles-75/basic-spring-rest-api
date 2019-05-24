@@ -1,12 +1,13 @@
 package com.asi.controller;
 
-import com.asi.Service.ArticleService;
+import com.asi.service.ArticleService;
 import com.asi.model.Article;
 import com.asi.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class ArticleController {
@@ -16,11 +17,16 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
-
+/*
     @PostMapping("/sendArticle")
     private String addArticle(@RequestBody Article article) {
         articleService.saveArticle(article);
         return "Ok";
     }
+*/
 
+    @GetMapping("/getArticle")
+    private List<Article> getAll(){
+        return articleService.findAll();
+    }
 }

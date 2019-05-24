@@ -13,7 +13,7 @@ import javax.persistence.Entity;
 
 @EnableAutoConfiguration
 @EntityScan(basePackages = "com.asi.model")
-@ComponentScan(basePackages = "com.asi.controller")
+@ComponentScan(basePackages = {"com.asi.controller", "com.asi.service"})
 @EnableJpaRepositories(basePackages = "com.asi.repository")
 @EnableWebMvc
 @Configuration

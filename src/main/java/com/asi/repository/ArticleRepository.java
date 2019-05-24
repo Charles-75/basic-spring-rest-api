@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ArticleRepository extends  JpaRepository<Article, Integer> {
 
-    void saveArticle(Article article);
-
+    //void saveArticle(Article article);
 }
