@@ -1,19 +1,16 @@
 package com.asi.model;
-
-
-
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
 
-
+@Data
 @Entity
 @Table(name = "articles")
 public class Article {
 
     @Id
-    @Column(name = "id_article")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     @Column(name = "author")
@@ -25,7 +22,7 @@ public class Article {
     @Column(name = "date")
     private Date date;
 
-    @JoinColumn(name = "section")
+    @JoinColumn(name = "section_id")
     @ManyToOne
     private Section section;
 
@@ -35,62 +32,4 @@ public class Article {
     @Column(name = "status")
     private String status;
 
-    public Article(){
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Section getSection() {
-        return section;
-    }
-
-    public void setSection(Section section) {
-        this.section = section;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }

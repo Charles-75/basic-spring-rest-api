@@ -1,35 +1,34 @@
 package com.asi.model;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Data
 @Entity
 @Table(name = "sections")
+@EqualsAndHashCode(exclude = { "articles"})
+@ToString(exclude = { "articles"})
 public class Section {
 
     @Id
-    @Column(name = "id_section")
-    @GeneratedValue
     int id;
 
     @Column(name = "name")
     private String name;
 
-    public Section() {
-    }
+    @JsonIgnore
+    @OneToMany(mappedBy = "section")
+    private List<Article> articles;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
+    @Override
+    public String toString() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 }
