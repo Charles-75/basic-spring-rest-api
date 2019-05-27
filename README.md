@@ -28,5 +28,5 @@ The development process is described below :
 
 ### Development 
 
-Start the WAMP server and be sure that MariaDB is running on port 3007 (if it's not, you can change the port in the application.properties spring file). You can use a different solution than WAMP server to run MariaDB, but it's more complicated as you will need to install it by hand.  
+Start the WAMP server and be sure that MariaDB is running on port 3007 (if it's not, you can change the port in the application.properties spring file). You can use a different solution than WAMP server for windows to run MariaDB, but it's more complicated as you will need to install it by hand.  
 Then, build and run the Spring Boot application with your IDE (IntelliJ IDEA or Eclipse I recommend). 
