@@ -12,7 +12,7 @@ In order to develop with docker, you first need to install docker on your comput
 For linux, it's pretty easy as docker needs to run on top of a linux kernel.  
 For Windows, you could install and use it thanks to a VM virtualbox which will use a linux VM to run it, https://docs.docker.com/toolbox/overview/ for instance.
 
-Go to the project's root directory, use `mvn install` to download and install all project's dependencies and `mvn package` after that to build the jar file.  
+Go to the project's root directory, use `mvn install` to download and install all project's dependencies and `mvn package` after that to build the jar file (make sure that the jar is inside the target folder, ROOT_DIRECTORY/target/your_jar.jar). 
 If you don't have maven, you should download it here : https://maven.apache.org/download.cgi.  
 
 ### Docker usage
